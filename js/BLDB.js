@@ -100,6 +100,7 @@ function deleteYN(data_count) {
 			deleteRequest.onsuccess = function(evt) {
 				alert("The data delete complete.");
 			};
+		dataRepeatCheck[data_count - 1] = "";
 		$("#"+data_count).remove();
 	}
 }
