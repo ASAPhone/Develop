@@ -21,6 +21,18 @@ function openDB() {
 	request.onsuccess = function (evt) {
 		alert('DB connexion success');
 		db = evt.target.result;
+		var objectStore = db.transaction("tempForStore").objectStore("tempForStore");
+
+		objectStore.openCursor().onsuccess = function(evt) {
+  			var cursor = evt.target.result;
+			
+  			if (cursor) {
+				data_count = cursor.value.id;
+				dataRepeatCheck[data_count - 1] = cursor.value.pN;
+				document.getElementById("addInBlackList").innerHTML += "<input type='button' id='" + data_count + "' onclick='deleteYN(" + data_count + ")' value = '" + cursor.value.name + "    " + cursor.value.pN + "'>";
+				cursor.continue();
+			}
+		};
 	};
 
 	request.onupgradeneeded = function(evt) {
@@ -44,14 +56,14 @@ function addingData(){
 			for (var i in tempForStore) {
                 		var request = objectStore.add(tempForStore[i]);
                 		request.onsuccess = function (evt) {
-                    			alert('Add success for ' + evt.target.result);
+                    			alert('Adding success');
                 		}
        			}
 			
 			/* 展示已儲存資料 */
 			db.transaction("tempForStore").objectStore("tempForStore").get(data_count).onsuccess = function(evt) {
 			document.getElementById("addInBlackList").innerHTML += "<input type='button' id='" + data_count + "' onclick='deleteYN(" + data_count + ")' value = '" + evt.target.result.name + "    " + evt.target.result.pN + "'>";
-				};
+			};
 		}
 		else{
 			alert("The phone number repeat.");
