@@ -68,7 +68,7 @@ function getFromFieldUser(){
 	editToDelete = 0;
 }
 function getFromFieldEdit(){
-	addingData(document.getElementById("editTargetName").value,document.getElementById("editTargePhone").value);
+	addingData(document.getElementById("editTargetName").value,document.getElementById("editTargetPhone").value);
 	if(editToDelete == 1){
 		dataDelete();
 		editToDelete = 0;
@@ -144,6 +144,8 @@ function userAddIn(Nname,Nphone) {
  */
 function tempForStoreVar(data_count){
 	getEditId = data_count;
+	document.getElementById("editTargetName").value = dataNameRepeatCheck[getEditId-1];
+	document.getElementById("editTargetPhone").value = dataPnRepeatCheck[getEditId-1];
 }
 
 /*
