@@ -1,13 +1,25 @@
-﻿var db = null;
+﻿/*
+	DB基本需求
+ */
+var db = null;
 const DB_name = "BLDB";
 const DB_ver = 2;
 const DB_store = "tempForStore";
-
 var data_count = 0;
 var tempForStore;
 
-var dataRepeatCheck = [];
+/*
+	紀錄資料來防止重複
+ */
+var dataNameRepeatCheck = [];
+var dataPnRepeatCheck = [];
 
+/*
+	換頁傳值
+ */
+var getEditId;
+
+var editToDelete = 0;
 
 /*
 	建立資料庫
@@ -28,13 +40,16 @@ function openDB() {
 			
   			if (cursor) {
 				data_count = cursor.value.id;
-				dataRepeatCheck[data_count - 1] = cursor.value.pN;
-				document.getElementById("addInBlackList").innerHTML += "<input type='button' id='" + data_count + "' onclick='deleteYN(" + data_count + ")' value = '" + cursor.value.name + "    " + cursor.value.pN + "'>";
+				dataNameRepeatCheck[data_count - 1] = cursor.value.name;
+				dataPnRepeatCheck[data_count - 1] = cursor.value.pN;
+				document.getElementById("addInBlackList").innerHTML += "<input type='button' id='" + data_count + "' onclick='javascript:location.href=\"#editPage\";tempForStoreVar(" + data_count + ");' value = '" + cursor.value.name + "    " + cursor.value.pN + "'>";
 				cursor.continue();
 			}
 		};
 	};
-
+	/*
+		資料庫第一次建置
+	 */
 	request.onupgradeneeded = function(evt) {
 		var db = evt.currentTarget.result;
 		var objectStore = db.createObjectStore(DB_store, { keyPath: "id"});
@@ -44,15 +59,31 @@ function openDB() {
 	
 	}
 }
+
+/*
+	獲取輸入資料
+ */
+function getFromFieldUser(){
+	addingData(document.getElementById("targetContactsName").value,document.getElementById("targetContactsPhone").value);
+	editToDelete = 0;
+}
+function getFromFieldEdit(){
+	addingData(document.getElementById("editTargetName").value,document.getElementById("editTargePhone").value);
+	if(editToDelete == 1){
+		dataDelete();
+		editToDelete = 0;
+	}
+}
+
 /*
 	加入資料到DB裡面
  */
-function addingData(){
+function addingData(Nname,Nphone){
 	var objectStore = getObjectStore(DB_store, "readwrite");
 
 	/* if-else防止使用輸入空資料 */
-	if(document.getElementById("targetContactsName").value!="" && document.getElementById("targetContactsPhone").value!=""){
-		if(userAddIn()){
+	if(Nname !="" && Nphone !=""){
+		if(userAddIn(Nname,Nphone)){
 			for (var i in tempForStore) {
                 		var request = objectStore.add(tempForStore[i]);
                 		request.onsuccess = function (evt) {
@@ -62,8 +93,9 @@ function addingData(){
 			
 			/* 展示已儲存資料 */
 			db.transaction("tempForStore").objectStore("tempForStore").get(data_count).onsuccess = function(evt) {
-			document.getElementById("addInBlackList").innerHTML += "<input type='button' id='" + data_count + "' onclick='deleteYN(" + data_count + ")' value = '" + evt.target.result.name + "    " + evt.target.result.pN + "'>";
+			document.getElementById("addInBlackList").innerHTML += "<input type='button' id='" + data_count + "' onclick='javascript:location.href=\"#editPage\";tempForStoreVar(" + data_count + ")' value = '" + dataNameRepeatCheck[data_count-1] + "    " + dataPnRepeatCheck[data_count-1] + "'>";
 			};
+			editToDelete = 1;
 		}
 		else{
 			alert("The phone number repeat.");
@@ -77,25 +109,26 @@ function getObjectStore(DB_store, mode) {
             var tx = db.transaction(DB_store, mode);
             return tx.objectStore(DB_store);
 }
+
 /*
-	自行輸入資料加入DB，防止重複
+	資料加入DB，防止重複
  */
-function userAddIn() {
+function userAddIn(Nname,Nphone) {
 	var notStore = 0;
-	
 	for(var j = 0;j < data_count;j++){
-		if(document.getElementById("targetContactsPhone").value == dataRepeatCheck[j]){
+		if(Nphone == dataPnRepeatCheck[j]){
 			notStore = 1;
 			break;
 		}
 	}
 	if(notStore != 1){
-		dataRepeatCheck[data_count] = document.getElementById("targetContactsPhone").value;
+		dataNameRepeatCheck[data_count] = Nname;
+		dataPnRepeatCheck[data_count] = Nphone;
 		data_count = data_count + 1;
 		tempForStore = [ { 	id: data_count,
-					name: document.getElementById("targetContactsName").value,
-					pN: document.getElementById("targetContactsPhone").value
-				}
+					name: Nname,
+					pN: Nphone
+				 }
 			];
 		
 		notStore = 0;
@@ -105,14 +138,33 @@ function userAddIn() {
 		return false;
 	}
 }
-function deleteYN(data_count) {
+
+/*
+	換頁傳值
+ */
+function tempForStoreVar(data_count){
+	getEditId = data_count;
+}
+
+/*
+	是否刪除資料
+ */
+function deleteYN() {
 	var r = confirm("Delete or not?");
 	if (r) {
-		var deleteRequest = db.transaction(DB_store, "readwrite").objectStore("tempForStore").delete(data_count);
-			deleteRequest.onsuccess = function(evt) {
-				alert("The data delete complete.");
-			};
-		dataRepeatCheck[data_count - 1] = "";
-		$("#"+data_count).remove();
+		dataDelete();
 	}
+}
+
+/*
+ 刪除資料
+ */
+function dataDelete(){
+	var deleteRequest = db.transaction(DB_store, "readwrite").objectStore("tempForStore").delete(getEditId);
+	deleteRequest.onsuccess = function(evt) {
+		console.log("The data delete complete.");
+	};
+	dataNameRepeatCheck[getEditId-1] = "";
+	dataPnRepeatCheck[getEditId - 1] = "";
+	$("#"+getEditId).remove();
 }
