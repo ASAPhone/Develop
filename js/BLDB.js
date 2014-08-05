@@ -72,6 +72,7 @@ function getFromFieldEdit(){
 	if(editToDelete == 1){
 		dataDelete();
 		editToDelete = 0;
+		location.href='#addBlackList';
 	}
 }
 
@@ -155,6 +156,7 @@ function deleteYN() {
 	var r = confirm("Delete or not?");
 	if (r) {
 		dataDelete();
+		location.href='#addBlackList';
 	}
 }
 
