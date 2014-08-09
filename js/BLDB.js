@@ -42,7 +42,7 @@ function openDB() {
 				data_count = cursor.value.id;
 				dataNameRepeatCheck[data_count - 1] = cursor.value.name;
 				dataPnRepeatCheck[data_count - 1] = cursor.value.pN;
-				document.getElementById("addInBlackList").innerHTML += "<input type='button' id='" + data_count + "' onclick='javascript:location.href=\"#editPage\";tempForStoreVar(" + data_count + ");' value = '" + cursor.value.name + "    " + cursor.value.pN + "'>";
+				document.getElementById("addInBlackList").innerHTML += "<div id='" + data_count + "' onclick='javascript:location.href=\"#editPage\";tempForStoreVar(" + data_count + ");'>" + cursor.value.name + "    " + cursor.value.pN + "<br></div>";
 				cursor.continue();
 			}
 		};
@@ -94,7 +94,7 @@ function addingData(Nname,Nphone){
 			
 			/* 展示已儲存資料 */
 			db.transaction("tempForStore").objectStore("tempForStore").get(data_count).onsuccess = function(evt) {
-			document.getElementById("addInBlackList").innerHTML += "<input type='button' id='" + data_count + "' onclick='javascript:location.href=\"#editPage\";tempForStoreVar(" + data_count + ")' value = '" + dataNameRepeatCheck[data_count-1] + "    " + dataPnRepeatCheck[data_count-1] + "'>";
+			document.getElementById("addInBlackList").innerHTML += "<div id='" + data_count + "' onclick='javascript:location.href=\"#editPage\";tempForStoreVar(" + data_count + ")'>" + dataNameRepeatCheck[data_count-1] + "    " + dataPnRepeatCheck[data_count-1] + "<br></div>";
 			};
 			editToDelete = 1;
 		}
