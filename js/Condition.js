@@ -10,19 +10,19 @@
  */
 
 function set_DeviceMainSound(Sound_value) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'audio.volume.content' : Sound_value,
-		'audio.volume.notification' : Sound_value
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'audio.volume.content': Sound_value,
+        'audio.volume.notification': Sound_value
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 /*
@@ -30,18 +30,18 @@ function set_DeviceMainSound(Sound_value) {
  */
 
 function set_DeviceContentSound(CTSound_value) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'audio.volume.content' : CTSound_value
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'audio.volume.content': CTSound_value
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 /*
@@ -49,18 +49,18 @@ function set_DeviceContentSound(CTSound_value) {
  */
 
 function set_DeviceNotificationSound(NTSound_value) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'audio.volume.notification' : NTSound_value
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'audio.volume.notification': NTSound_value
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 /*
@@ -68,18 +68,18 @@ function set_DeviceNotificationSound(NTSound_value) {
  */
 
 function set_DeviceDTMFSound(DTMFSound_value) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'audio.volume.dtmf' : DTMFSound_value
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'audio.volume.dtmf': DTMFSound_value
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 /*
@@ -87,18 +87,18 @@ function set_DeviceDTMFSound(DTMFSound_value) {
  */
 
 function set_DeviceTelephonySound(TPSound_value) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'audio.volume.telephony' : TPSound_value
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'audio.volume.telephony': TPSound_value
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 /*
@@ -106,18 +106,18 @@ function set_DeviceTelephonySound(TPSound_value) {
  */
 
 function set_DeviceKeyboardSound(KBSound_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'keyboard.clicksound' : KBSound_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'keyboard.clicksound': KBSound_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 /*
@@ -125,18 +125,18 @@ function set_DeviceKeyboardSound(KBSound_bool) {
  */
 
 function set_DeviceAlarmSound(ALSound_value) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'audio.volume.alarm' : ALSound_value
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'audio.volume.alarm': ALSound_value
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 /*
@@ -144,18 +144,18 @@ function set_DeviceAlarmSound(ALSound_value) {
  */
 
 function set_DeviceLockscreenSound(LSSound_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'lockscreen.unlock-sound.enabled' : LSSound_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'lockscreen.unlock-sound.enabled': LSSound_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 /*
@@ -163,18 +163,18 @@ function set_DeviceLockscreenSound(LSSound_bool) {
  */
 
 function set_DeviceMailSentSound(MSSound_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'mail.sent-sound.enabled' : MSSound_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'mail.sent-sound.enabled': MSSound_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 /*
@@ -182,18 +182,18 @@ function set_DeviceMailSentSound(MSSound_bool) {
  */
 
 function set_DeviceMessageSentSound(MeSSound_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'mail.sent-sound.enabled' : MeSSound_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'mail.sent-sound.enabled': MeSSound_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 // ---------------Audio series Ending line---------------//
@@ -205,18 +205,18 @@ function set_DeviceMessageSentSound(MeSSound_bool) {
  */
 
 function set_DeviceScreenBrightness(Bright_Value) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'screen.brightness' : Bright_Value
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'screen.brightness': Bright_Value
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 
 }
 
@@ -225,18 +225,18 @@ function set_DeviceScreenBrightness(Bright_Value) {
  */
 
 function set_DeviceScreenBrightnessAuto(Bright_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'screen.automatic-brightness' : Bright_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'screen.automatic-brightness': Bright_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 
 }
 
@@ -249,18 +249,18 @@ function set_DeviceScreenBrightnessAuto(Bright_bool) {
  */
 
 function set_DeviceBluetooth(BT_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'bluetooth.enabled' : BT_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'bluetooth.enabled': BT_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 
 }
 
@@ -273,18 +273,18 @@ function set_DeviceBluetooth(BT_bool) {
  */
 
 function set_DeviceWifi(WIFI_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'wifi.enabled' : WIFI_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'wifi.enabled': WIFI_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 
 }
 
@@ -297,18 +297,18 @@ function set_DeviceWifi(WIFI_bool) {
  */
 
 function set_DeviceWap(Wap_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'ril.data.enabled' : Wap_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'ril.data.enabled': Wap_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 
 }
 
@@ -321,18 +321,18 @@ function set_DeviceWap(Wap_bool) {
  */
 
 function set_DeviceGPS(GPS_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'geolocation.enabled' : GPS_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'geolocation.enabled': GPS_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 // -------------Geolocation series Ending line-------------//
@@ -344,7 +344,7 @@ function set_DeviceGPS(GPS_bool) {
  */
 
 function set_DeviceTime(OBtime) {
-	Navigatorr.mozTime.set(OBtime);
+    Navigatorr.mozTime.set(OBtime);
 }
 
 // -------------Time series Ending line-------------//
@@ -356,18 +356,18 @@ function set_DeviceTime(OBtime) {
  */
 
 function set_DeviceVibration(DV_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'vibration.enabled' : DV_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'vibration.enabled': DV_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 /*
@@ -376,26 +376,26 @@ function set_DeviceVibration(DV_bool) {
  */
 
 var vibrateInterval = null;
+
 function startVibrate(duration) {
-	navigator.vibrate(duration);
+    navigator.vibrate(duration);
 }
 
 // 持續時間 間隔 是否重複
 function set_DeviceVibrationMov(Ctime, interval, isInterval) {
-	navigator.vibrate = navigator.vibrate || navigator.webkitVibrate
-			|| navigator.mozVibrate || navigator.msVibrate;
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 
-	if (navigator.vibrate) {
-		if (isInterval) {
-			vibrateInterval = setInterval(function() {
-				startVibrate(Ctime);
-			}, Ctime + interval);
-		} else {
-			startVibrate(Ctime);
-		}
-	} else {
-		alert("Sorry your browers is not surpport vibration API");
-	}
+    if (navigator.vibrate) {
+        if (isInterval) {
+            vibrateInterval = setInterval(function() {
+                startVibrate(Ctime);
+            }, Ctime + interval);
+        } else {
+            startVibrate(Ctime);
+        }
+    } else {
+        alert("Sorry your browers is not surpport vibration API");
+    }
 }
 
 /*
@@ -403,9 +403,9 @@ function set_DeviceVibrationMov(Ctime, interval, isInterval) {
  */
 
 function set_DeviceStopVibrate() {
-	if (vibrateInterval)
-		clearInterval(vibrateInterval);
-	navigator.vibrate(0);
+    if (vibrateInterval)
+        clearInterval(vibrateInterval);
+    navigator.vibrate(0);
 }
 
 // -------------Vibration series Ending line-------------//
@@ -417,18 +417,18 @@ function set_DeviceStopVibrate() {
  */
 
 function set_DevicePowerSaving(PS_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'powersave.enabled' : PS_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'powersave.enabled': PS_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 // -------------Device power series Ending line-------------//
@@ -440,18 +440,18 @@ function set_DevicePowerSaving(PS_bool) {
  */
 
 function Set_DevicePhoneCallLimited(PCL_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'ring.enabled' : PCL_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'ring.enabled': PCL_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 // -------------Device phone call series Ending line-------------//
@@ -463,18 +463,32 @@ function Set_DevicePhoneCallLimited(PCL_bool) {
  */
 
 function Set_DeviceCamera(CM_bool) {
-	var lock = Navigator.mozSettings.createLock();
-	var result = lock.set({
-		'camera.shutter.enabled' : CM_bool
-	});
+    var lock = Navigator.mozSettings.createLock();
+    var result = lock.set({
+        'camera.shutter.enabled': CM_bool
+    });
 
-	result.onsuccess = function() {
-		console.log("the settings has been changed");
-	};
+    result.onsuccess = function() {
+        console.log("the settings has been changed");
+    };
 
-	result.onerror = function() {
-		console.log("An error occure, the settings remain unchanged");
-	};
+    result.onerror = function() {
+        console.log("An error occure, the settings remain unchanged");
+    };
 }
 
 // -------------Device Camera series series Ending line-------------//
+
+// -------------Device SleepMode series Beginning line-------------//
+function Set_DeviceSleepMode(check) {
+    if (check) {
+        alert("Sleep Mode has started.");
+        setPowerSaving(check);
+        setSound(0);
+        alert("Have you set clock?");
+    } else {
+        setPowerSaving(check);
+        alert("Sleep Mode has stopped.");
+    }
+}
+// -------------Device SleepMode series Beginning line-------------//
