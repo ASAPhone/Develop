@@ -10,7 +10,7 @@
  */
 
 function set_DeviceMainSound(Sound_value) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'audio.volume.content': Sound_value,
         'audio.volume.notification': Sound_value
@@ -30,7 +30,7 @@ function set_DeviceMainSound(Sound_value) {
  */
 
 function set_DeviceContentSound(CTSound_value) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'audio.volume.content': CTSound_value
     });
@@ -49,7 +49,7 @@ function set_DeviceContentSound(CTSound_value) {
  */
 
 function set_DeviceNotificationSound(NTSound_value) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'audio.volume.notification': NTSound_value
     });
@@ -68,7 +68,7 @@ function set_DeviceNotificationSound(NTSound_value) {
  */
 
 function set_DeviceDTMFSound(DTMFSound_value) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'audio.volume.dtmf': DTMFSound_value
     });
@@ -87,7 +87,7 @@ function set_DeviceDTMFSound(DTMFSound_value) {
  */
 
 function set_DeviceTelephonySound(TPSound_value) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'audio.volume.telephony': TPSound_value
     });
@@ -106,7 +106,7 @@ function set_DeviceTelephonySound(TPSound_value) {
  */
 
 function set_DeviceKeyboardSound(KBSound_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'keyboard.clicksound': KBSound_bool
     });
@@ -125,7 +125,7 @@ function set_DeviceKeyboardSound(KBSound_bool) {
  */
 
 function set_DeviceAlarmSound(ALSound_value) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'audio.volume.alarm': ALSound_value
     });
@@ -144,7 +144,7 @@ function set_DeviceAlarmSound(ALSound_value) {
  */
 
 function set_DeviceLockscreenSound(LSSound_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'lockscreen.unlock-sound.enabled': LSSound_bool
     });
@@ -163,7 +163,7 @@ function set_DeviceLockscreenSound(LSSound_bool) {
  */
 
 function set_DeviceMailSentSound(MSSound_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'mail.sent-sound.enabled': MSSound_bool
     });
@@ -182,7 +182,7 @@ function set_DeviceMailSentSound(MSSound_bool) {
  */
 
 function set_DeviceMessageSentSound(MeSSound_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'mail.sent-sound.enabled': MeSSound_bool
     });
@@ -205,7 +205,7 @@ function set_DeviceMessageSentSound(MeSSound_bool) {
  */
 
 function set_DeviceScreenBrightness(Bright_Value) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'screen.brightness': Bright_Value
     });
@@ -225,7 +225,7 @@ function set_DeviceScreenBrightness(Bright_Value) {
  */
 
 function set_DeviceScreenBrightnessAuto(Bright_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'screen.automatic-brightness': Bright_bool
     });
@@ -249,7 +249,7 @@ function set_DeviceScreenBrightnessAuto(Bright_bool) {
  */
 
 function set_DeviceBluetooth(BT_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'bluetooth.enabled': BT_bool
     });
@@ -273,7 +273,7 @@ function set_DeviceBluetooth(BT_bool) {
  */
 
 function set_DeviceWifi(WIFI_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'wifi.enabled': WIFI_bool
     });
@@ -297,7 +297,7 @@ function set_DeviceWifi(WIFI_bool) {
  */
 
 function set_DeviceWap(Wap_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'ril.data.enabled': Wap_bool
     });
@@ -321,7 +321,7 @@ function set_DeviceWap(Wap_bool) {
  */
 
 function set_DeviceGPS(GPS_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'geolocation.enabled': GPS_bool
     });
@@ -356,7 +356,7 @@ function set_DeviceTime(OBtime) {
  */
 
 function set_DeviceVibration(DV_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'vibration.enabled': DV_bool
     });
@@ -377,10 +377,6 @@ function set_DeviceVibration(DV_bool) {
 
 var vibrateInterval = null;
 
-function startVibrate(duration) {
-    navigator.vibrate(duration);
-}
-
 // 持續時間 間隔 是否重複
 function set_DeviceVibrationMov(Ctime, interval, isInterval) {
     navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
@@ -388,24 +384,20 @@ function set_DeviceVibrationMov(Ctime, interval, isInterval) {
     if (navigator.vibrate) {
         if (isInterval) {
             vibrateInterval = setInterval(function() {
-                startVibrate(Ctime);
+                navigator.vibrate(Ctime);
             }, Ctime + interval);
+            window.addEventListener('click', function set_DeviceStopVibrate() {
+                if (vibrateInterval){
+                    clearInterval(vibrateInterval);
+                }
+                navigator.vibrate(0);
+            }, false);
         } else {
-            startVibrate(Ctime);
+            navigator.vibrate(Ctime);
         }
     } else {
         alert("Sorry your browers is not surpport vibration API");
     }
-}
-
-/*
- * Setting device vibration stop.(called)
- */
-
-function set_DeviceStopVibrate() {
-    if (vibrateInterval)
-        clearInterval(vibrateInterval);
-    navigator.vibrate(0);
 }
 
 // -------------Vibration series Ending line-------------//
@@ -417,7 +409,7 @@ function set_DeviceStopVibrate() {
  */
 
 function set_DevicePowerSaving(PS_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'powersave.enabled': PS_bool
     });
@@ -440,7 +432,7 @@ function set_DevicePowerSaving(PS_bool) {
  */
 
 function Set_DevicePhoneCallLimited(PCL_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'ring.enabled': PCL_bool
     });
@@ -463,7 +455,7 @@ function Set_DevicePhoneCallLimited(PCL_bool) {
  */
 
 function Set_DeviceCamera(CM_bool) {
-    var lock = Navigator.mozSettings.createLock();
+    var lock = navigator.mozSettings.createLock();
     var result = lock.set({
         'camera.shutter.enabled': CM_bool
     });
