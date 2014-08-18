@@ -387,7 +387,7 @@ function set_DeviceVibrationMov(Ctime, interval, isInterval) {
                 navigator.vibrate(Ctime);
             }, Ctime + interval);
             window.addEventListener('click', function set_DeviceStopVibrate() {
-                if (vibrateInterval){
+                if (vibrateInterval) {
                     clearInterval(vibrateInterval);
                 }
                 navigator.vibrate(0);
@@ -483,4 +483,34 @@ function Set_DeviceSleepMode(check) {
         alert("Sleep Mode has stopped.");
     }
 }
-// -------------Device SleepMode series Beginning line-------------//
+// -------------Device SleepMode series Ending line-------------//
+
+// -------------Car key Beginning line-------------//
+/*
+    get the specific IP as the car's key,
+    Firefox OS can automatic catch hotspot that have used before
+ */
+function toFindTheKey(check) {
+    /*
+        here's check for selector to open whether us this function
+     */
+    if (check) {
+        setWifi(true);
+        /*
+            10 second for when turn on the wifi,it need almost 5 second
+            or more to automatic connect the target's wifi
+         */
+        setTimeout(function() {
+            alert("function goes right");
+            var wifi = navigator.mozWifiManager;
+            var info = wifi.connectionInformation;
+            //this alert for debug
+            alert('IP: ' + info.ipAddress);
+            if (info.ipAddress == "192.168.0.101") {
+                alert("I got the KEY~~~~");
+                //action adding here,the phone limit have some problem,so didn't put in
+            }
+        }, 10000);
+    }
+}
+// -------------Car key Ending line-------------//
