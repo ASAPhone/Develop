@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0">
     <title>Automatic Status Adjustment for Phone</title>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBp37T05asGoDR1Yxfs4NQ3GrvQqSBD0Os&sensor=true"></script>
@@ -17,7 +17,7 @@
     <script type="text/javascript" src="js/listener.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <!--   real setting api                         -->
-        <script src="/js/setting.js"></script>   
+    <script src="/js/setting.js"></script>
 
     <!--   fake setting api start                         -->
     <!--<script type="text/javascript" src="js/fakeApi.js"></script>
@@ -28,7 +28,7 @@
     <script type="text/javascript" src="js/BLDB.js"></script>
 </head>
 
-<body onload="openDB();">
+<body onload="openDB()">
     <!-- Start of first page : #homePage -->
     <div data-role="page" id="homePage">
         <div data-role="header" data-position="fixed" data-theme="a">
@@ -64,7 +64,7 @@
                     <h3>GENERAL</h3>
                     <label for="tipsOption" style="display: inline">Tips</label>
                     <select id="tipsOptionId" name="tipsOption" data-role="slider" data-mini="true" data-theme="a">
-                        <option value="false" >Off</option>
+                        <option value="false">Off</option>
                         <option value="true" selected>On</option>
                     </select>
                     <br>
@@ -136,10 +136,10 @@
         <div data-role="header" data-position="fixed" data-theme="a">
             <a href="#settingPage" data-transition="slide" data-direction="reverse" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext"></a>
             <h1>My Blacklist</h1>
-	    <a href="#inputMyself" data-transition="slide" data-role="button" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext"></a>
+            <a href="#inputMyself" data-transition="slide" data-role="button" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext"></a>
         </div>
         <div data-role="content">
-                <p id="addInBlackList"></p>
+            <p id="addInBlackList"></p>
         </div>
     </div>
 
@@ -151,11 +151,11 @@
         </div>
         <div data-role="content">
             <div style="text-align: center" class="ui-field-contain">
- 			<label for="targetContactsName">Name:</label>
-   			<input style="border: 1px black solid" type="text" name="targetContactsName" id="targetContactsName">
-		 	<label for="targetContactsPhone">Phone Number:</label>
-   			<input style="border: 1px black solid" type="text" name="targetContactsPhone" id="targetContactsPhone" onchange="if(/\D/.test(this.value)){alert('only number');this.value='';}">
-			<input type="button" id="btnTargetContacts" onclick="getFromFieldUser()" value="Add to black list">
+                <label for="targetContactsName">Name:</label>
+                <input style="border: 1px black solid" type="text" name="targetContactsName" id="targetContactsName">
+                <label for="targetContactsPhone">Phone Number:</label>
+                <input style="border: 1px black solid" type="text" name="targetContactsPhone" id="targetContactsPhone" onchange="if(/\D/.test(this.value)){alert('only number');this.value='';}">
+                <input type="button" id="btnTargetContacts" onclick="getFromFieldUser()" value="Add to black list">
             </div>
         </div>
     </div>
@@ -166,14 +166,14 @@
             <a href="#addBlackList" data-transition="slide" data-direction="reverse" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext"></a>
             <h1>Edit Data</h1>
         </div>
-	<div data-role="content">
-			<label for="targetContactsName">Name:</label>
-   			<input style="border: 1px black solid" type="text" name="editTargetName" id="editTargetName">
-		 	<label for="targetContactsPhone">Phone Number:</label>
-   			<input style="border: 1px black solid" type="text" name="editTargetPhone" id="editTargetPhone" onchange="if(/\D/.test(this.value)){alert('only number');this.value='';}">
-			<input type="button" id="btnEidtTargetName" onclick="getFromFieldEdit()" value="Edit finish">
-			<input type="button" id="btnEidtTargetPn" onclick="deleteYN();" value="Delete this data">
-	</div>
+        <div data-role="content">
+            <label for="targetContactsName">Name:</label>
+            <input style="border: 1px black solid" type="text" name="editTargetName" id="editTargetName">
+            <label for="targetContactsPhone">Phone Number:</label>
+            <input style="border: 1px black solid" type="text" name="editTargetPhone" id="editTargetPhone" onchange="if(/\D/.test(this.value)){alert('only number');this.value='';}">
+            <input type="button" id="btnEidtTargetName" onclick="getFromFieldEdit()" value="Edit finish">
+            <input type="button" id="btnEidtTargetPn" onclick="deleteYN();" value="Delete this data">
+        </div>
     </div>
 
     <!--    這邊是要給使用者在查看通訊錄(要把誰加進黑名單)時搜索    -->
