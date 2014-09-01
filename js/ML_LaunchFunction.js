@@ -26,13 +26,13 @@ function Launch_ML(switch_bool, ML_fea1, ML_fea2, ML_fea3, ML_fea4) {
 
 		// catch data every 50 mile seconds.
 		ML_Interval = setInterval(function() {
-			CatchIntoArray(Mo_x, Mo_y, Mo_z);
 			if (flag == 80) {
 				initial_ML(ML_fea1, ML_fea2, ML_fea3, ML_fea4);
-				cleanArray(data_x);
-				cleanArray(data_y);
-				cleanArray(data_z);
+			//	cleanArray(data_x);
+			//	cleanArray(data_y);
+			//	cleanArray(data_z);
 			}
+			CatchIntoArray(Mo_x, Mo_y, Mo_z);
 		}, 50);
 	} else {
 		clearInterval(ML_Interval);
@@ -75,11 +75,9 @@ function CatchIntoArray(x, y, z, ID1, ID2, ID3, ID4) {
 	data_x[flag] = x;
 	data_y[flag] = y;
 	data_z[flag] = z;
-	document.getElementById('xyz').innerHTML = "flag" + " " + flag + " " + "X:"
-			+ " " + data_x[flag] + " Y:" + " " + data_y[flag] + " Z:" + " "
-			+ data_z[flag];
 	if (flag == 80) {
-		flag = 0;
+		SlideWinodw(data_x,data_y,data_z);
+		flag = 40;
 	} else {
 		flag++;
 	}

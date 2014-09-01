@@ -2,7 +2,7 @@
 
 function ML_MainSYS(category_arr1, category_arr2, category_arr3, category_arr4,
 		X, Y, Z) {
-
+	
 	var counted_data = [];
 	var fea_det_arr = Array(42);
 	var Top3_ID;
@@ -112,10 +112,10 @@ function ML_MainSYS(category_arr1, category_arr2, category_arr3, category_arr4,
 			temp[k] = Nor_arr[k][i];
 		//	alert(temp[k]);
 		}
-
+		
 		col_Max = getMax(temp);
 		col_Min = getMin(temp);
-
+		
 		// ID1
 		for (var j = 0; j < 6; j++) {
 			Normalize(category_arr1, j, i, col_Min, col_Max);
@@ -135,11 +135,11 @@ function ML_MainSYS(category_arr1, category_arr2, category_arr3, category_arr4,
 		for (var j = 0; j < 6; j++) {
 			Normalize(category_arr4, j, i, col_Min, col_Max);
 		}
-
+		
 		// Detected Data
 		NormalizeFor1D(fea_det_arr, i, col_Min, col_Max);
 	}
-
+	
 	//alert(temp);
 	//alert(category_arr1);
 	//alert(category_arr2);

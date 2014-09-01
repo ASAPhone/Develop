@@ -17,7 +17,7 @@ function preSort(tar_arr) {
 function getAvg(tar_arr) {
 	var sum_av = 0;
 	for (var i in tar_arr) {
-	    sum_av = sum_av + tar_arr[i];
+	    sum_av = sum_av + tar_arr[i]; 
 	}
 	return sum_av / 80.0;
 }

@@ -34,7 +34,13 @@ function CatchIntoArrayForUser(x, y, z, ID, flag) {
 	case 1:
 		ML_train1[flag] = DataTrasfer(x, y, z);
 		localStorage["ML_train1"] = JSON.stringify(ML_train1);
-		//var ML_train1data = JSON.parse(localStorage["ML_train1"]);
+		var ML_train1data = JSON.parse(localStorage["ML_train1"]);
+		document.getElementById('Train1_1').innerHTML = "Train1_1: " + ML_train1data[0];
+		document.getElementById('Train1_2').innerHTML = "Train1_2: " + ML_train1data[1];
+		document.getElementById('Train1_3').innerHTML = "Train1_3: " + ML_train1data[2];
+		document.getElementById('Train1_4').innerHTML = "Train1_4: " + ML_train1data[3];
+		document.getElementById('Train1_5').innerHTML = "Train1_5: " + ML_train1data[4];
+		document.getElementById('Train1_6').innerHTML = "Train1_6: " + ML_train1data[5];
 		break;
 	case 2:
 		ML_train2[flag] = DataTrasfer(x, y, z);
