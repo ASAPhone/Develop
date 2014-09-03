@@ -28,9 +28,6 @@ function Launch_ML(switch_bool, ML_fea1, ML_fea2, ML_fea3, ML_fea4) {
 		ML_Interval = setInterval(function() {
 			if (flag == 80) {
 				initial_ML(ML_fea1, ML_fea2, ML_fea3, ML_fea4);
-			//	cleanArray(data_x);
-			//	cleanArray(data_y);
-			//	cleanArray(data_z);
 			}
 			CatchIntoArray(Mo_x, Mo_y, Mo_z);
 		}, 50);
@@ -54,11 +51,6 @@ function initial_ML(ID1, ID2, ID3, ID4) {
 	} else {
 		ML_FRFlag++;
 	}
-	document.getElementById('ML_FR').innerHTML = "ML_FR:" + ML_FR;
-	document.getElementById('ML_finalResult').innerHTML = "ML_finalResult:"
-			+ ML_finalResult;
-	// SlideWinodw(data_x, data_y, data_z);
-	// StartSlide();
 }
 
 function handleMotion(event) {
@@ -99,15 +91,3 @@ function cleanArray(tar_arr) {
 		tar_arr[i] = 0;
 	}
 }
-/*
- * function StartSlide(ID1,ID2,ID3,ID4) { ML_SlideInterval =
- * setInterval(function() { ML_finalResult[ML_FRFlag] =
- * ML_MainSYS(ID1,ID2,ID3,ID4, data_x, data_y, data_z); SlideWinodw(data_x,
- * data_y, data_z); if (ML_FRFlag == 2) { if ((ML_finalResult[0] ==
- * ML_finalResult[1]) && (ML_finalResult[1] == ML_finalResult[2])) { ML_FR =
- * ML_finalResult[0]; } ML_finalResult[0] = ML_finalResult[1]; ML_finalResult[1] =
- * ML_finalResult[2]; } ML_FRFlag++; document.getElementById('ML_FR').innerHTML =
- * "ML_FR:" + ML_FR; document.getElementById('ML_finalResult').innerHTML =
- * "ML_finalResult:" + ML_finalResult; }, 2000); }
- */
-
