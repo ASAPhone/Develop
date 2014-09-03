@@ -17,6 +17,7 @@ var data_z = Array(81);
 var flag = 0;
 var User_flag = 0;
 var ML_feature = [];
+var ML_Interval;
 
 function Launch_ML(switch_bool, ML_fea1, ML_fea2, ML_fea3, ML_fea4) {
 
